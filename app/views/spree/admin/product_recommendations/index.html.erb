@@ -1,0 +1,15 @@
+<%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => "ProductRecommendations"} %>
+
+<div id="product_recommendations">
+	<h1><%= Spree.t('product_recommendations') %></h1>
+
+  <%= render "product_recommendations_table", product_recommendations: @product_recommendations %>
+</div>
+
+<% content_for :page_actions do %>
+  <% #if can?(:create, Spree::ProductRecommendation) %>
+  <li id="new_product_recommendation_link">
+    <%= button_link_to Spree.t(:new_product_recommendation), new_admin_product_product_recommendation_url(@product), { :icon => 'plus', :id => 'new_product_recommendation_link' } %>
+  </li>
+  <% #end %>
+<% end %>

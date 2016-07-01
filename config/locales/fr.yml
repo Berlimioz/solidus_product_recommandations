@@ -1,0 +1,22 @@
+---
+fr:
+  activerecord:
+    attributes:
+      spree/product_recommendation:
+        recommendation_source: Source
+        comment_title: Titre du commentaire
+        comment: Commentaire
+        scoring_type: Type de notation
+        scoring_value: Notation
+  spree:
+    product_recommendations: Recommandations produit
+    new_product_recommendation: Ajouter une recommendation
+    edit_product_recommendation: Modifier une recommendation
+    product_recommendation:
+      scoring_types:
+        mark: Note
+        mark_over: Note sur
+    admin:
+      product_recommendations:
+        product_recommendations_table:
+          none: Aucune recommandation.

@@ -1,0 +1,32 @@
+
+<% if product_recommendations.present? %>
+
+<table class="index">
+  <thead>
+  <tr>
+    <th><%= Spree.t(:recommendation_source) %></th>
+    <th><%= Spree.t(:comment_title) %></th>
+    <th><%= Spree.t(:comment) %></th>
+    <th><%= Spree.t(:scoring_type) %></th>
+    <th><%= Spree.t(:scoring_value) %></th>
+    <th><%= Spree.t('actions.edit') %></th>
+  </tr>
+  </thead>
+  <tbody>
+    <% product_recommendations.each do |recommendation| %>
+      <tr id="<%= dom_id(recommendation, :sel)%>">
+        <td><%= recommendation.recommendation_source %></td>
+        <td><%= recommendation.comment_title %></td>
+        <td><%= recommendation.comment %></td>
+        <td><%= recommendation.display_scoring_type %></td>
+        <td><%= recommendation.scoring_value %></td>
+        <td>
+          <%= link_to Spree.t('actions.edit'), edit_admin_product_product_recommendation_url(recommendation.product, recommendation) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+  <tr><td colspan="5"><%= t('.none') %></td></tr>
+<% end %>

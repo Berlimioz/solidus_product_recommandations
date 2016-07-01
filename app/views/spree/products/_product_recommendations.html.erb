@@ -1,0 +1,14 @@
+<% if @product.product_recommendations.visible.any? %>
+
+  <h6><%= Spree.t(:product_recommendations) %></h6>
+
+  <ul id="product_recommendations" class="inline product-listing" data-hook>
+    <% @product.product_recommendations.each do |product_recommendation| %>
+      <li>
+        <%= product_recommendation.recommendation_source %>
+        <%= product_recommendation.display_scoring_type%>
+        <%= product_recommendation.scoring_value %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

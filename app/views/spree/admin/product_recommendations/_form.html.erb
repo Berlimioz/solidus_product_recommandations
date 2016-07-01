@@ -1,0 +1,61 @@
+<%= form_for product_recommendation, url: (product_recommendation.new_record? ? admin_product_product_recommendations_path(product) : admin_product_product_recommendation_path(product, product_recommendation)) do |f| %>
+  <div data-hook="admin_product_recommendation_form" class="row">
+    <div class="left eight columns alpha" data-hook="admin_product_recommendation_form_left">
+      <div data-hook="admin_product_recommendation_form_recommendation_source">
+        <%= f.field_container :recommendation_source do %>
+          <%= f.label :recommendation_source, class: 'required' %>
+          <%= f.text_field :recommendation_source, :class => 'fullwidth title', :required => true %>
+          <%= f.error_message_on :recommendation_source %>
+        <% end %>
+      </div>
+
+      <div data-hook="admin_product_recommendation_form_scoring_type" class="alpha omega eight columns">
+        <%= f.field_container :scoring_type do %>
+          <%= f.label :scoring_type %>
+
+          <%= f.select(:scoring_type, scoring_types_list) %>
+          <%= f.error_message_on :scoring_type %>
+        <% end %>
+      </div>
+
+      <div data-hook="admin_product_recommendation_form_scoring_value" class="alpha eight columns">
+        <%= f.field_container :scoring_value do %>
+          <%= f.label :scoring_value %>
+          <%= f.text_field :scoring_value %>
+          <%= f.error_message_on :scoring_value %>
+        <% end %>
+      </div>
+
+    </div>
+    <div class="right eight columns alpha" data-hook="admin_product_recommendation_form_right">
+
+      <div data-hook="admin_product_recommendation_form_comment_title">
+        <%= f.field_container :comment_title do %>
+          <%= f.label :comment_title %>
+          <%= f.text_field :comment_title, :class => 'fullwidth title', :required => true %>
+          <%= f.error_message_on :comment_title %>
+        <% end %>
+      </div>
+
+      <div data-hook="admin_product_recommendation_form_comment">
+        <%= f.field_container :comment do %>
+          <%= f.label :comment %>
+          <%= f.text_area :comment, :class => 'fullwidth' %>
+          <%= f.error_message_on :comment %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row omega" data-hook="admin_product_recommendation_form_submit">
+    <% if product_recommendation.new_record? %>
+      <%= button Spree.t('actions.create'), 'ok' %>
+      <%#= render :partial => 'spree/admin/shared/new_resource_links' %>
+    <% else %>
+      <%= button Spree.t('actions.edit'), 'ok' %>
+      <%#= render :partial => 'spree/admin/shared/edit_resource_links' %>
+    <% end %>
+  </div>
+
+
+
+<% end %>

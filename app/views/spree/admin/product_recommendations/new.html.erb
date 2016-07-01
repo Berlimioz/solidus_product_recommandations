@@ -1,0 +1,5 @@
+<%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => "ProductRecommendations"} %>
+
+<h1><%= Spree.t('new_product_recommendation') %></h1>
+
+<%= render 'form', product: @product, product_recommendation: @product_recommendation %>

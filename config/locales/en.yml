@@ -1,0 +1,22 @@
+---
+en:
+  activerecord:
+    attributes:
+      spree/product_recommendation:
+        recommendation_source: Source
+        comment_title: Comment's title
+        comment: Comment
+        scoring_type: Scoring type
+        scoring_value: Scoring value
+  spree:
+    product_recommendations: Product recommendations
+    new_product_recommendation: Add a product recommendation
+    edit_product_recommendation: Edit a product recommendation
+    product_recommendation:
+      scoring_types:
+        mark: Mark
+        mark_over: Mark over
+    admin:
+      product_recommendations:
+        product_recommendations_table:
+          none: No recommendation found.
